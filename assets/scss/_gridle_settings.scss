@@ -1,0 +1,21 @@
+// import gridle
+@import "gridle/gridle-flex";
+
+// setting up the grid
+@include gridle_setup(());
+
+// make the use of media queries really easy
+@include gridle_register_state ( mobile , (
+    max-width : 480px
+) );
+
+@include gridle_register_state ( mid-tablet , (
+    min-width : 481px,
+    max-width : 900px
+) ) ;
+
+
+@include gridle_register_state ( tablet , (
+    min-width : 901px,
+    max-width : 1366px
+) ) ;

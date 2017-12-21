@@ -1,0 +1,19 @@
+{
+  "name": "jerrick-media",
+  "dependencies": {
+    "css-mqpacker": "6.0.0",
+    "gridle": "2.0.48",
+    "node-sass": "4.5.2",
+    "nuxt": "latest",
+    "postcss-cssnext": "2.10.0",
+    "postcss-loader": "1.3.3",
+    "postcss-responsive-font": "1.0.3",
+    "sass-loader": "6.0.0"
+  },
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  }
+}

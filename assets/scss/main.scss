@@ -1,0 +1,235 @@
+@import "gridle_settings";
+
+:root {
+  --basefontSize: 1rem;
+  --mainContainerMarginTop: 75px;
+  --mainContainerMarginLeftRight: 100px;
+  font-size: 16px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-size: var(--basefontSize);
+  background-color: #1a1a1a;
+    overflow-y: scroll;
+}
+
+body,
+ul {
+  margin: initial;
+  padding: initial;
+}
+
+#header-container {
+  @include gridle_grid_adapt();
+  @include gridle_grid(adapt);
+}
+
+#header-row {
+  @include gridle_row();
+  @include gridle_row_align(between)
+}
+
+#header-row .right-nav ul li {
+  margin-right: 2rem;
+  @include gridle_show_inline ();
+
+  &:last-child {
+    margin-right: 0;
+  }
+  @include gridle_state(mobile mid-tablet) {
+     @include gridle_hide ();
+  }
+}
+
+.right-nav-theme {
+  height: calc(100vh - var(--mainContainerMarginTop) - 6rem);
+  @include gridle_row();
+  @include gridle_row_align(middle);
+}
+
+.right-nav-theme a {
+  transition: 0.2s opacity;
+  opacity: 0.5;
+  transition: 0.2s opacity;
+}
+
+.right-nav-theme a:hover {
+  transition: 0.2 opacity;
+  opacity: 1;
+}
+
+.mobile_overlay_wrap {
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #1a1a1a;
+}
+
+.mobile_button_row {
+  @include gridle_hide ();
+  @include gridle_row();
+  @include gridle_row_align(right middle) @include gridle_state(mobile mid-tablet) {
+    display: flex;
+  }
+}
+
+.mobile_button {
+  position: fixed;
+  line-height: 0;
+  bottom: 5vh;
+  right: 3rem;
+  width: 4rem;
+  height: 4rem;
+  font-size: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #007AFF;
+  z-index: 999;
+  color: white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+nav ul {
+  list-style-type: none;
+}
+
+.mouter {
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+.minner {
+  margin-top: 75px;
+  margin-left: calc(var(--mainContainerMarginLeftRight));
+  margin-right: calc(var(--mainContainerMarginLeftRight));
+  margin-top: calc(var(--mainContainerMarginTop));
+  @include gridle_state(tablet) {
+    margin-left: calc(var(--mainContainerMarginLeftRight)/1.5);
+    margin-right: calc(var(--mainContainerMarginLeftRight)/1.5);
+    margin-top: calc(var(--mainContainerMarginTop));
+  }
+  @include gridle_state(mid-tablet) {
+    margin-left: calc(var(--mainContainerMarginLeftRight)/2);
+    margin-right: calc(var(--mainContainerMarginLeftRight)/2);
+    margin-top: calc(var(--mainContainerMarginTop));
+  }
+  @include gridle_state(mobile) {
+    margin-left: calc(var(--mainContainerMarginLeftRight)/3);
+    margin-right: calc(var(--mainContainerMarginLeftRight)/3);
+    margin-top: calc(var(--mainContainerMarginTop));
+  }
+}
+
+.fade-enter,
+.fade-leave {
+  transition: opacity 0.5s ease-in;
+}
+.fade-enter-active,
+.fade-leave-to {
+  opacity: 1;
+}
+
+.page-enter-active {
+  animation: fade-in-bottom 0.3s;
+}
+
+.page-leave-active {
+  animation: fade-in-bottom 0.3s reverse;
+}
+
+.page-enter,
+.page-leave {
+  opacity: 0;
+}
+@-webkit-keyframes fade-in-bottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-bottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.qmod-block-wrapper {
+  background-color: transparent !important;
+  color: white !important;
+  }
+
+  .qmod-hbg {
+  background-color: transparent !important;
+  }
+
+  .qmod-detailedquote .qmod-quotegrid .qmod-label {
+  color:white !important;
+  }
+
+  .qmod-ui-tool a {
+  color:white !important;
+  }
+
+  a.qmod-tooltip {
+  color: white !important;
+  }
+
+  .qmod-ui-tool {
+  color: white !important;
+  }
+
+  .qmod-fullnews .qmod-news-list {
+  background-color: transparent !important;
+  }
+
+  .qmod-fullnews .qmod-news-list li:nth-child(2n+0) {
+  background-color: transparent !important;
+  }
+
+  .qmod-fullnews .qmod-news-list li {
+  background-color: transparent !important;
+  }
+
+  .qmod-sec-filings table.dataTable.no-footer {
+  border-bottom: none !important;
+  }
+
+  .qmod-sec-filings table.dataTable tbody tr {
+  background-color: transparent !important;
+  }
+
+  a.qmod-dropdown_toggle {
+    color: black !important;
+  }
+
+.qmod-dropdown-menu li>a {
+color: black !important;
+}
+
+.qmod-sec-filings .dataTables_wrapper .dataTables_paginate .paginate_button {
+  color: white !important;
+}
+
+.qmod-sec-filings .dataTables_wrapper .dataTables_paginate {
+  margin-top: 2rem !important;
+}
